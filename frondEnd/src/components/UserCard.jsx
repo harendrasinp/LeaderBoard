@@ -2,7 +2,7 @@ import axios from "axios";
 
 const UserCard = ({ user, onClaim }) => {
   const handleClaim = async () => {
-    const res = await axios.post(`http://localhost:5000/api/users/claim/${user._id}`);
+    const res =  await axios.post(`${process.env.REACT_APP_BASE_URL}/api/users/claim/${user._id}`);
     onClaim();
     alert(`${user.name} got ${res.data.claimedPoints} points!`);
   };

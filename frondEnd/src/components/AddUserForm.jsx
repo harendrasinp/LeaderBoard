@@ -10,7 +10,7 @@ const AddUserForm = ({ onClose, onUserAdded }) => {
     if (!name || !points) return;
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users/add", {
+      await axios.post(`${process.env.REACT_APP_BASE_URL}/api/users/add`, {
         name,
         totalPoints: Number(points),
       });
