@@ -6,7 +6,17 @@ import router from './routes/userRoutes.js';
 dotenv.config();
 connectDB();
 const app = express();
-app.use(cors());
+
+app.use(cors({
+ origin: [
+  "http://localhost:3000",
+  "https://<your-vercel-app>.vercel.app",
+  "https://leaderboard-41cb.onrender.com"
+],
+  methods: ["GET", "POST", "PATCH", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 
