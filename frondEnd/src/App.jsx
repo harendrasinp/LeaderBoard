@@ -10,8 +10,10 @@ const App = () => {
   const [showForm, setShowForm] = useState(false); // new state
 
   const fetchData = async () => {
-    const res1 = await axios.get("http://localhost:5000/api/users");
-    const res2 = await axios.get("http://localhost:5000/api/users/leaderboard");
+    // const res1 = await axios.get("http://localhost:5000/api/users");
+    // const res2 = await axios.get("http://localhost:5000/api/users/leaderboard");
+    const res1 = await axios.get("https://leaderboard-41cb.onrender.com/api/users");
+    const res2 = await axios.get("https://leaderboard-41cb.onrender.com/api/users/leaderboard");
     setUsers(res1.data);
     setLeaderboard(res2.data);
   };
